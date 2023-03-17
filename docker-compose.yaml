@@ -7,3 +7,8 @@ services:
       - "27017:27017"
     volumes:
       - ./mongodb-data:/data/db
+  
+  flask_api:
+    build: .
+    ports:
+      - "5000:5000"
