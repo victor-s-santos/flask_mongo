@@ -9,6 +9,12 @@ services:
       - ./mongodb-data:/data/db
   
   flask_api:
+    volumes:
+      - .:/app
     build: .
+    depends_on:
+      - mongo_db
     ports:
       - "5000:5000"
+    links:
+      - mongo_db
